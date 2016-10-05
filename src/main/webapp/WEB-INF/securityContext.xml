@@ -155,8 +155,21 @@
                     </constructor-arg>
                     <constructor-arg>
                         <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
+                            <property name="local" value="true"/>
+                            <property name="alias" value="defaultAlias"/>
+                            <!-- <property name="securityProfile" value="metaiop"/>-->
+                            <!--<property name="sslSecurityProfile" value="pkix"/>-->
+                            <property name="sslHostnameVerification" value="allowAll"/>
+                            <property name="signMetadata" value="false"/>
+                            <property name="signingKey" value="apollo"/>
+                            <property name="encryptionKey" value="apollo"/>
+                            <property name="requireArtifactResolveSigned" value="false"/>
+                            <property name="requireLogoutRequestSigned" value="false"/>
+                            <property name="requireLogoutResponseSigned" value="false"/>
                         </bean>
                     </constructor-arg>
+                    <property name="metadataTrustCheck" value="false"/>
+                    <property name="metadataRequireSignature" value="false"/>
                 </bean>
                 <!-- Example of HTTP metadata without Extended Metadata -->
                 <!--<bean class="org.opensaml.saml2.metadata.provider.HTTPMetadataProvider">-->
@@ -171,16 +184,17 @@
                     <property name="parserPool" ref="parserPool"/>
                 </bean>-->
                 <!-- Example of file system metadata without Extended Metadata -->
-                <bean class="org.opensaml.saml2.metadata.provider.FilesystemMetadataProvider">
+                <!--<bean class="org.opensaml.saml2.metadata.provider.FilesystemMetadataProvider">
                     <constructor-arg>
                         <value type="java.io.File">/opt/metadata.xml</value>
                     </constructor-arg>
                     <property name="parserPool" ref="parserPool"/>
-                </bean>
+                </bean>-->
             </list>
         </constructor-arg>
         <!-- OPTIONAL used when one of the metadata files contains information about this service provider -->
         <!-- <property name="hostedSPName" value=""/> -->
+        <property name="hostedSPName" value="ce.gluu.info"/>
         <!-- OPTIONAL property: can tell the system which IDP should be used for authenticating user by default. -->
         <!-- <property name="defaultIDP" value="http://localhost:8080/opensso"/> -->
     </bean>
@@ -200,6 +214,18 @@
                 <constructor-arg index="0" ref="metadata"/>
                 <constructor-arg index="1" ref="keyManager"/>
                 <property name="useXmlMetadata" value="true"/>
+            </bean>
+	</property>
+        <property name="pkixTrustEvaluator">
+            <bean class="org.springframework.security.saml.trust.CertPathPKIXTrustEvaluator">
+                <property name="PKIXValidationOptions">
+                <bean class="org.opensaml.xml.security.x509.CertPathPKIXValidationOptions">
+                    <property name="forceRevocationEnabled" value="false"/>
+                    <property name="revocationEnabled" value="false"/>
+                </bean>
+                </property>
+                <property name="validateCertPath" value="false"/>
+                <property name="securityProvider" value="SUN"/>
             </bean>
 	</property>
     </bean>
