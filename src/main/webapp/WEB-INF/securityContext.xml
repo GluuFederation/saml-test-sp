@@ -156,9 +156,9 @@
                     <constructor-arg>
                         <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
                             <property name="local" value="true"/>
-                            <property name="alias" value="defaultAlias"/>
-                            <!-- <property name="securityProfile" value="metaiop"/>-->
-                            <!--<property name="sslSecurityProfile" value="pkix"/>-->
+                            <property name="alias" value="shibbolethidp"/>
+                            <property name="securityProfile" value="metaiop"/>
+                            <property name="sslSecurityProfile" value="metaiop"/>
                             <property name="sslHostnameVerification" value="allowAll"/>
                             <property name="signMetadata" value="false"/>
                             <property name="signingKey" value="apollo"/>
@@ -166,6 +166,41 @@
                             <property name="requireArtifactResolveSigned" value="false"/>
                             <property name="requireLogoutRequestSigned" value="false"/>
                             <property name="requireLogoutResponseSigned" value="false"/>
+                        </bean>
+                    </constructor-arg>
+                    <property name="metadataTrustCheck" value="false"/>
+                    <property name="metadataRequireSignature" value="false"/>
+                </bean>
+                <bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
+                    <constructor-arg>
+                        <bean class="org.opensaml.saml2.metadata.provider.ResourceBackedMetadataProvider">
+                            <constructor-arg>
+                                <bean class="java.util.Timer"/>
+                            </constructor-arg>
+                            <constructor-arg>
+                                <bean class="org.opensaml.util.resource.ClasspathResource">
+                                    <constructor-arg value="/metadata/asimba-idp.xml"/>
+                                </bean>
+                            </constructor-arg>
+                            <property name="parserPool" ref="parserPool"/>
+                        </bean>
+                    </constructor-arg>
+                    <constructor-arg>
+                        <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
+                            <property name="local" value="true"/>
+                            <property name="alias" value="asimbaidp"/>
+                            <property name="securityProfile" value="metaiop"/>
+                            <property name="sslSecurityProfile" value="metaiop"/>
+                            <property name="sslHostnameVerification" value="allowAll"/>
+                            <property name="signMetadata" value="false"/>
+                            <property name="signingKey" value="apollo"/>
+                            <property name="encryptionKey" value="apollo"/>
+                            <property name="requireArtifactResolveSigned" value="false"/>
+                            <property name="requireLogoutRequestSigned" value="false"/>
+                            <property name="requireLogoutResponseSigned" value="false"/>
+                            <property name="idpDiscoveryEnabled" value="true"/>
+                            <property name="idpDiscoveryURL" value="https://ce.gluu.info/saml-test-sp/saml/discovery"/>
+                            <property name="idpDiscoveryResponseURL" value="https://ce.gluu.info/saml-test-sp/saml/login?disco=true"/>
                         </bean>
                     </constructor-arg>
                     <property name="metadataTrustCheck" value="false"/>
@@ -194,9 +229,10 @@
         </constructor-arg>
         <!-- OPTIONAL used when one of the metadata files contains information about this service provider -->
         <!-- <property name="hostedSPName" value=""/> -->
-        <property name="hostedSPName" value="ce.gluu.info"/>
+        <property name="hostedSPName" value="https://ce.gluu.info/saml-test-sp/saml/metadata"/>
         <!-- OPTIONAL property: can tell the system which IDP should be used for authenticating user by default. -->
-        <!-- <property name="defaultIDP" value="http://localhost:8080/opensso"/> -->
+        <!-- <property name="defaultIDP" value="https://ce.gluu.info/idp/shibboleth"/>  -->
+        <!-- <property name="defaultIDP" value="https://ce.gluu.info/asimba/profiles/saml2"/>-->
     </bean>
 
     <!-- SAML Authentication Provider responsible for validating of received SAML messages -->

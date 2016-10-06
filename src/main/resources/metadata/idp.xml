@@ -1,47 +1,84 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="ce.gluu.info" entityID="https://ce.gluu.info/asimba/profiles/saml2"><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference URI="#ce.gluu.info"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>k1aOQbsowISBvfOMkeyS3bQnv34=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>XsGniWj7S3/fiiDFMbEcKwwd014q2CuuS+iHGHqusP3zw5CXyXXMBaflxHCGmeoQ7xtHTBKw/5on+XLHpib4YUTRz/2P4MmynEsDA4+wbW1ffI+WuB/Q85LI4I2E/acO5jhDzsFnnEr8cI8Ij5DMp56JQ/ioCRA5mNX9k5Fd/66/TZzb3TS23wGLnJRxvseP4eN3SBHiAOfO/3NFv7GFPn9aHXd66QqmdQfZovVRoqMxOGbD6x1X9nlHcaHVgC9S/i0GX1oEDVahDFra5IeMWjOsDTBaT49lbmEkf5D9jqMcHV8mwSDBF3mLSf1WemJNLqZEcPeE4SSgN5juBOPr3g==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIDYjCCAkoCCQCKo8+VvjxojDANBgkqhkiG9w0BAQsFADBzMQswCQYDVQQGEwJVWTELMAkGA1UE
-CAwCTU4xEzARBgNVBAcMCk1vbnRldmlkZW8xDTALBgNVBAoMBEdsdXUxFTATBgNVBAMMDGNlLmds
-dXUuaW5mbzEcMBoGCSqGSIb3DQEJARYNZG1vZ25AbWFpbC5ydTAeFw0xNjA4MDUxNTIzMTZaFw0x
-NzA4MDUxNTIzMTZaMHMxCzAJBgNVBAYTAlVZMQswCQYDVQQIDAJNTjETMBEGA1UEBwwKTW9udGV2
-aWRlbzENMAsGA1UECgwER2x1dTEVMBMGA1UEAwwMY2UuZ2x1dS5pbmZvMRwwGgYJKoZIhvcNAQkB
-Fg1kbW9nbkBtYWlsLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkxNMrxrRcnsB
-QRSyc45ld1fkKEkA0Uxd4nbaUNTCJ975TqUH/2CRRK2ssgjq1DfEEALOeznUNt+g9Q5VLGDSN0tK
-QCuzhzbu2jdAut8tXOfNLog7hH54ZaJyTLj6NFICKNYtC2dPhz+bGJ1nTsv6SVSMcxbUeeEsqisS
-gGgJ7GCZ6KGghpZrwh9/9Ogs7I4oqLwbZM27JNz5MWOOYGVm3EWu8+pOCrnDIJda4TJxhN2LgpAh
-R4ccgHTay6tFgFKJHwNBtiVmrpUtQs0hZYrgHvDaT7qnRKXCPI1NWeUYeRQSzqGdj5EElzsUyEi1
-1c20A4aK+yhmqb06Pfrvb5MmCQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQAeEhJ5h1AJM4dc7OZH
-QdI3LNRM+EHjh7TMK8GRtA3WQsHspSU/LCr2+DyreG/hAw6ub0cyQ6yHBpX+Ye3TMzW+US2KzxIy
-NIHROoBSDD9eoaG0opF73e+7rYqXNeRLs59qN7vP099QBDHO82q/GpEi0L6+dZx/zR+ocNtIkKBS
-rukaxDNk8QcKt299BuQj2mE3Yji3Xy6yxWG03SqnnZBbkROZdsh26B2mywrgi+jlQra7Quvh8JDk
-cXSZRn+f/G3+oLXvbfAievowzn8CyF4BkC8wGe34OCO+d1NSQztZieSw6PzHfFBc4ErhvMsJdhwQ
-RUalemsfrFEgETUlvg3C</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature><md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>MIIDYjCCAkoCCQCKo8+VvjxojDANBgkqhkiG9w0BAQsFADBzMQswCQYDVQQGEwJVWTELMAkGA1UE
-CAwCTU4xEzARBgNVBAcMCk1vbnRldmlkZW8xDTALBgNVBAoMBEdsdXUxFTATBgNVBAMMDGNlLmds
-dXUuaW5mbzEcMBoGCSqGSIb3DQEJARYNZG1vZ25AbWFpbC5ydTAeFw0xNjA4MDUxNTIzMTZaFw0x
-NzA4MDUxNTIzMTZaMHMxCzAJBgNVBAYTAlVZMQswCQYDVQQIDAJNTjETMBEGA1UEBwwKTW9udGV2
-aWRlbzENMAsGA1UECgwER2x1dTEVMBMGA1UEAwwMY2UuZ2x1dS5pbmZvMRwwGgYJKoZIhvcNAQkB
-Fg1kbW9nbkBtYWlsLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkxNMrxrRcnsB
-QRSyc45ld1fkKEkA0Uxd4nbaUNTCJ975TqUH/2CRRK2ssgjq1DfEEALOeznUNt+g9Q5VLGDSN0tK
-QCuzhzbu2jdAut8tXOfNLog7hH54ZaJyTLj6NFICKNYtC2dPhz+bGJ1nTsv6SVSMcxbUeeEsqisS
-gGgJ7GCZ6KGghpZrwh9/9Ogs7I4oqLwbZM27JNz5MWOOYGVm3EWu8+pOCrnDIJda4TJxhN2LgpAh
-R4ccgHTay6tFgFKJHwNBtiVmrpUtQs0hZYrgHvDaT7qnRKXCPI1NWeUYeRQSzqGdj5EElzsUyEi1
-1c20A4aK+yhmqb06Pfrvb5MmCQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQAeEhJ5h1AJM4dc7OZH
-QdI3LNRM+EHjh7TMK8GRtA3WQsHspSU/LCr2+DyreG/hAw6ub0cyQ6yHBpX+Ye3TMzW+US2KzxIy
-NIHROoBSDD9eoaG0opF73e+7rYqXNeRLs59qN7vP099QBDHO82q/GpEi0L6+dZx/zR+ocNtIkKBS
-rukaxDNk8QcKt299BuQj2mE3Yji3Xy6yxWG03SqnnZBbkROZdsh26B2mywrgi+jlQra7Quvh8JDk
-cXSZRn+f/G3+oLXvbfAievowzn8CyF4BkC8wGe34OCO+d1NSQztZieSw6PzHfFBc4ErhvMsJdhwQ
-RUalemsfrFEgETUlvg3C</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ce.gluu.info/asimba/profiles/saml2/sp/sso/web" index="0" isDefault="true"/><md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://ce.gluu.info/asimba/profiles/saml2/sp/sso/web" index="1" isDefault="false"/></md:SPSSODescriptor><md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>MIIDYjCCAkoCCQCKo8+VvjxojDANBgkqhkiG9w0BAQsFADBzMQswCQYDVQQGEwJVWTELMAkGA1UE
-CAwCTU4xEzARBgNVBAcMCk1vbnRldmlkZW8xDTALBgNVBAoMBEdsdXUxFTATBgNVBAMMDGNlLmds
-dXUuaW5mbzEcMBoGCSqGSIb3DQEJARYNZG1vZ25AbWFpbC5ydTAeFw0xNjA4MDUxNTIzMTZaFw0x
-NzA4MDUxNTIzMTZaMHMxCzAJBgNVBAYTAlVZMQswCQYDVQQIDAJNTjETMBEGA1UEBwwKTW9udGV2
-aWRlbzENMAsGA1UECgwER2x1dTEVMBMGA1UEAwwMY2UuZ2x1dS5pbmZvMRwwGgYJKoZIhvcNAQkB
-Fg1kbW9nbkBtYWlsLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkxNMrxrRcnsB
-QRSyc45ld1fkKEkA0Uxd4nbaUNTCJ975TqUH/2CRRK2ssgjq1DfEEALOeznUNt+g9Q5VLGDSN0tK
-QCuzhzbu2jdAut8tXOfNLog7hH54ZaJyTLj6NFICKNYtC2dPhz+bGJ1nTsv6SVSMcxbUeeEsqisS
-gGgJ7GCZ6KGghpZrwh9/9Ogs7I4oqLwbZM27JNz5MWOOYGVm3EWu8+pOCrnDIJda4TJxhN2LgpAh
-R4ccgHTay6tFgFKJHwNBtiVmrpUtQs0hZYrgHvDaT7qnRKXCPI1NWeUYeRQSzqGdj5EElzsUyEi1
-1c20A4aK+yhmqb06Pfrvb5MmCQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQAeEhJ5h1AJM4dc7OZH
-QdI3LNRM+EHjh7TMK8GRtA3WQsHspSU/LCr2+DyreG/hAw6ub0cyQ6yHBpX+Ye3TMzW+US2KzxIy
-NIHROoBSDD9eoaG0opF73e+7rYqXNeRLs59qN7vP099QBDHO82q/GpEi0L6+dZx/zR+ocNtIkKBS
-rukaxDNk8QcKt299BuQj2mE3Yji3Xy6yxWG03SqnnZBbkROZdsh26B2mywrgi+jlQra7Quvh8JDk
-cXSZRn+f/G3+oLXvbfAievowzn8CyF4BkC8wGe34OCO+d1NSQztZieSw6PzHfFBc4ErhvMsJdhwQ
-RUalemsfrFEgETUlvg3C</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://ce.gluu.info/asimba/profiles/saml2/sso/logout"/><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ce.gluu.info/asimba/profiles/saml2/sso/logout"/><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://ce.gluu.info/asimba/profiles/saml2/sso/web"/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ce.gluu.info/asimba/profiles/saml2/sso/web"/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://ce.gluu.info/asimba/profiles/saml2/sso/web"/></md:IDPSSODescriptor><md:Organization><md:OrganizationName xml:lang="en">ce.gluu.info</md:OrganizationName><md:OrganizationDisplayName xml:lang="en">Gluu Asimba SSO</md:OrganizationDisplayName><md:OrganizationURL xml:lang="en">http://www.gluu.org</md:OrganizationURL></md:Organization></md:EntityDescriptor>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     This is example metadata only. Do *NOT* supply it as is without review,
+     and do *NOT* provide it in real time to your partners.
+
+     This metadata is not dynamic - it will not change as your configuration changes.
+-->
+<EntityDescriptor  xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xml="http://www.w3.org/XML/1998/namespace" entityID="https://ce.gluu.info/idp/shibboleth">
+
+    <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                    <ds:X509Data>
+                        <ds:X509Certificate>
+MIIDYjCCAkoCCQCihdaGUULgezANBgkqhkiG9w0BAQsFADBzMQswCQYDVQQGEwJV
+WTELMAkGA1UECAwCTU4xEzARBgNVBAcMCk1vbnRldmlkZW8xDTALBgNVBAoMBEds
+dXUxFTATBgNVBAMMDGNlLmdsdXUuaW5mbzEcMBoGCSqGSIb3DQEJARYNZG1vZ25A
+bWFpbC5ydTAeFw0xNjA3MTgwNDU5NDRaFw0xNzA3MTgwNDU5NDRaMHMxCzAJBgNV
+BAYTAlVZMQswCQYDVQQIDAJNTjETMBEGA1UEBwwKTW9udGV2aWRlbzENMAsGA1UE
+CgwER2x1dTEVMBMGA1UEAwwMY2UuZ2x1dS5pbmZvMRwwGgYJKoZIhvcNAQkBFg1k
+bW9nbkBtYWlsLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwg6b
+vop5MtHZS+YmP1PXXUvV4HlS2BhZoqaIYpzbIQGYldmqmRKNpoUd/IcRCFAI49rg
+XVRa7omJdAAxhCj8HP5rk+ZDG/XLyf6s3BqrvgD54WRXc7aVcgwxOWUlljX37umD
+zJwxhmBOGG/P7IAI/TcjwroQ0u4VJoznFYLV5022gVewJAscI/aEZI9q5GtoxRpa
+wjwmOrLF6oyS2TueG+USskau8+OM6x9Xh/2vP3V4lqO70ANP+sAWVEB0itXJC9rP
+XDqWtQxbzAOE33TtjtR6fvt+h1uX9h3Hn6KCwYl/pVBwBSuoXu64nypnbNAahSbK
+q/DZWTP0vEL4/lauMQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCJs2is4QGl13hv
+FP0b+57h7943c4iYYcIjrL7TsyeoZo9YVs0lV66AHcx1p0vD/t+h/UCeC3wUVLck
+dR0ZO7z9QI/3pwMYpHlFmxxJfTZG30+H9KQI12tXsHiucS+3QxICcJskdBXpWmKR
+WnJw/4f/KFdsaedq0A2ffD4oLFmXjSTZHixzXK6SzUY016fsSHHiiBUosvjq8PA2
+D3XNRh31gL2nBW7T1bOYbjOOTVCcJ2SbF9kOOIr81/Odm4sv03rMQbvPRnsmU4Aj
+VarM9VyGMHhKW3PD1CcRyNbzQlDGAdnegPEVxTDfV5Lg8dHJg8nY6/VK25kRjg0E
+jhQM+LsM
+                        </ds:X509Certificate>
+                    </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <KeyDescriptor use="encryption">
+            <ds:KeyInfo>
+                    <ds:X509Data>
+                        <ds:X509Certificate>
+MIIDYjCCAkoCCQDmAsAn/kG0SzANBgkqhkiG9w0BAQsFADBzMQswCQYDVQQGEwJV
+WTELMAkGA1UECAwCTU4xEzARBgNVBAcMCk1vbnRldmlkZW8xDTALBgNVBAoMBEds
+dXUxFTATBgNVBAMMDGNlLmdsdXUuaW5mbzEcMBoGCSqGSIb3DQEJARYNZG1vZ25A
+bWFpbC5ydTAeFw0xNjA3MTgwNDU5NDFaFw0xNzA3MTgwNDU5NDFaMHMxCzAJBgNV
+BAYTAlVZMQswCQYDVQQIDAJNTjETMBEGA1UEBwwKTW9udGV2aWRlbzENMAsGA1UE
+CgwER2x1dTEVMBMGA1UEAwwMY2UuZ2x1dS5pbmZvMRwwGgYJKoZIhvcNAQkBFg1k
+bW9nbkBtYWlsLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArwPX
+hrzO1YsNNhnCx1ccagul8LZblaUiGTpe1Lk52QhaDaPJ936HdFHs+mXn2nzw37kw
+BjMrbtmJS4HVMcNMa3t6SwU1f2D0JbzCERdCsY/gSR0C7dk1X4eVbmf+ps/DXlsX
+LsZzdztY88HAtKf4dTd1eHJDpnxf3M2e7cZTBh1NGEM8g3NmUtzvxeLAeYvJs3U3
+XPICzyiNvXMP1hXq8QhqM5dYezuq4mO9SxWzA1eIaJzcvH/cK/2VKFQnzJyBq1aG
+IpvCSiZqyvhttggaaJNyaOcDkcevEYl9UA6RmiK5SkXL6J1mO+7qiU19wR9FznqJ
+AjpcYst5TomLancoEQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQA8y4VYFp83jr/L
+ItIxyuXM1YOJM/RqA2aFD5PSdyso34RfCBLebEl/lh1Uj3PW9LAfhSc9wLWUK/2T
+LN/BZI4Yhvf/k4eCkrOiTcXK/jub2aS5HNn9AqeJENZL17CBmohZ4fYSw6TMtxnc
+JttSoqCMR7smruTyMEWL38SXzU3LEm9kCy4R2KP7WLyfZe+szyvY+aAwzTQIT9dy
+o5TskxjIVx1s0VE4I/409zvAqxpD43K4lAOYB9XStZR/hewIAPJRnAhcs9Hfdj8i
+bd4KSQjltmPb1eyOruWWJDuA40QqJkPEUY+EM5H1iGD5QN9ABQwSVbyXiT47vqTK
+FTuNMM61
+                        </ds:X509Certificate>
+                    </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://ce.gluu.info:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+
+        <!--
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://ce.gluu.info/idp/profile/SAML2/Redirect/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ce.gluu.info/idp/profile/SAML2/POST/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://ce.gluu.info/idp/profile/SAML2/POST-SimpleSign/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://ce.gluu.info:8443/idp/profile/SAML2/SOAP/SLO"/>
+        -->
+
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ce.gluu.info/idp/profile/SAML2/POST/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://ce.gluu.info/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://ce.gluu.info/idp/profile/SAML2/Redirect/SSO"/>
+
+    </IDPSSODescriptor>
+
+</EntityDescriptor>
