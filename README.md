@@ -15,17 +15,14 @@ Asimba IDP saml-test-sp/src/main/resources/metadata/asimba-idp.xml
 
 Open saml-test-sp URL -> "Metadata Administration" (User: admin, passw: admin) -> "Generate new service provider Metadata"
 
+```
 Store for the current session: Yes
-
 Entity ID: https://hostname/saml-test-sp/saml/metadata
-
 Entity base URL: https://hostname/saml-test-sp
-
 Signature security profile: MetaIOP  (= trust all)
-
 SSL/TLS security profile: MetaIOP (= trust all)
-
 SSL/TLS hostname verification: Disable hostname verification (allow all)
+```
 
 -> "Generate Metadata"
 
@@ -35,6 +32,8 @@ Default SP metadata URL:  https://hostname/saml-test-sp/saml/metadata
 
  
 ### HOWTO install saml-test-sp inside gluu-server:
+
+Deploy saml-test-sp.war to /opt/gluu-server-2.4.4/
 
 edit /opt/gluu-server-2.4.4/etc/apache2/sites-available/https_gluu.conf
 
