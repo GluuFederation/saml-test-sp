@@ -35,10 +35,12 @@ public class MetadataValidator implements Validator {
         this.manager = manager;
     }
 
+    @Override
     public boolean supports(Class<?> clazz) {
         return clazz.equals(MetadataForm.class);
     }
 
+    @Override
     public void validate(Object target, Errors errors) {
 
         MetadataForm metadata = (MetadataForm) target;
