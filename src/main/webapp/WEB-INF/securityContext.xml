@@ -32,6 +32,7 @@
         <security:intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY"/>
         <security:custom-filter before="FIRST" ref="metadataGeneratorFilter"/>
         <security:custom-filter after="BASIC_AUTH_FILTER" ref="samlFilter"/>
+        <security:logout logout-url="/j_logout" logout-success-url="/logout.jsp"/>
     </security:http>
 
     <!-- Filters for processing of SAML messages -->
@@ -102,6 +103,9 @@
         <property name="defaultProfileOptions">
             <bean class="org.springframework.security.saml.websso.WebSSOProfileOptions">
                 <property name="includeScoping" value="false"/>
+                <property name="providerName" value="SAML_Test_SP"/>
+                <property name="forceAuthN" value="false"/>
+                <property name="relayState" value="test"/>
             </bean>
         </property>
     </bean>
@@ -138,6 +142,39 @@
     <bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
         <constructor-arg>
             <list>
+                <!-- ce.gluu.info:18443 Metadata -->
+                <bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
+                    <constructor-arg>
+                        <bean class="org.opensaml.saml2.metadata.provider.ResourceBackedMetadataProvider">
+                            <constructor-arg>
+                                <bean class="java.util.Timer"/>
+                            </constructor-arg>
+                            <constructor-arg>
+                                <bean class="org.opensaml.util.resource.ClasspathResource">
+                                    <constructor-arg value="/metadata/httpscegluuinfo18443samltestspsamlmetadata_sp.xml"/>
+                                </bean>
+                            </constructor-arg>
+                            <property name="parserPool" ref="parserPool"/>
+                        </bean>
+                    </constructor-arg>
+                    <constructor-arg>
+                        <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
+                           <property name="local" value="true"/>
+                           <property name="securityProfile" value="metaiop"/>
+                           <property name="sslSecurityProfile" value="metaiop"/>
+                           <property name="sslHostnameVerification" value="allowAll"/>
+                           <property name="signMetadata" value="true"/>
+                           <property name="signingKey" value="apollo"/>
+                           <property name="encryptionKey" value="apollo"/>
+                           <property name="requireArtifactResolveSigned" value="false"/>
+                           <property name="requireLogoutRequestSigned" value="false"/>
+                           <property name="requireLogoutResponseSigned" value="false"/>
+                           <property name="idpDiscoveryEnabled" value="true"/>
+                           <property name="idpDiscoveryURL" value="https://ce.gluu.info:18443/saml-test-sp/saml/discovery"/>
+                           <property name="idpDiscoveryResponseURL" value="https://ce.gluu.info:18443/saml-test-sp/saml/login?disco=true"/>
+                        </bean>
+                    </constructor-arg>
+                </bean>
                 <!-- Example of classpath metadata with Extended Metadata -->
                 <bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
                     <constructor-arg>
@@ -199,8 +236,8 @@
                             <property name="requireLogoutRequestSigned" value="false"/>
                             <property name="requireLogoutResponseSigned" value="false"/>
                             <property name="idpDiscoveryEnabled" value="true"/>
-                            <property name="idpDiscoveryURL" value="https://ce.gluu.info/saml-test-sp/saml/discovery"/>
-                            <property name="idpDiscoveryResponseURL" value="https://ce.gluu.info/saml-test-sp/saml/login?disco=true"/>
+                            <property name="idpDiscoveryURL" value="https://ce.gluu.info:18443/saml-test-sp/saml/discovery"/>
+                            <property name="idpDiscoveryResponseURL" value="https://ce.gluu.info:18443/saml-test-sp/saml/login?disco=true"/>
                         </bean>
                     </constructor-arg>
                     <property name="metadataTrustCheck" value="false"/>
@@ -229,7 +266,7 @@
         </constructor-arg>
         <!-- OPTIONAL used when one of the metadata files contains information about this service provider -->
         <!-- <property name="hostedSPName" value=""/> -->
-        <property name="hostedSPName" value="https://ce.gluu.info/saml-test-sp/saml/metadata"/>
+        <property name="hostedSPName" value="https://ce.gluu.info:18443/saml-test-sp/saml/metadata"/>
         <!-- OPTIONAL property: can tell the system which IDP should be used for authenticating user by default. -->
         <!-- <property name="defaultIDP" value="https://ce.gluu.info/idp/shibboleth"/>  -->
         <!-- <property name="defaultIDP" value="https://ce.gluu.info/asimba/profiles/saml2"/>-->
@@ -283,7 +320,7 @@
     <!-- Logout handler terminating local session -->
     <bean id="logoutHandler"
           class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler">
-        <property name="invalidateHttpSession" value="false"/>
+        <property name="invalidateHttpSession" value="true"/>
     </bean>
 
     <!-- Override default logout processing filter with the one processing SAML messages -->
